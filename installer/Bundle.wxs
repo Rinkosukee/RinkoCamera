@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+  <Bundle Name="RinkoCamera · TSUKI" Manufacturer="RinkoCamera Contributors"
+          Version="$(var.ProductVersion)" UpgradeCode="FE42A468-9E9F-407A-B899-5632D1854DD7"
+          IconSourceFile="$(var.BrandDir)\tsuki.ico" Compressed="yes">
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication Theme="hyperlinkLicense" LicenseUrl=""
+          LogoFile="$(var.BrandDir)\installer-logo.png" ShowVersion="yes" SuppressOptionsUI="yes"
+          LaunchTarget="[LocalAppDataFolder]RinkoCamera\RinkoCamera.exe" />
+    </BootstrapperApplication>
+    <Chain>
+      <MsiPackage SourceFile="$(var.MsiPath)" Compressed="yes" Visible="no" Vital="yes" />
+    </Chain>
+  </Bundle>
+</Wix>

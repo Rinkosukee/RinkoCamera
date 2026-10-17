@@ -1,0 +1,14 @@
+**/bin/
+**/obj/
+artifacts/
+.vs/
+.wix/
+*.user
+*.suo
+*.log
+*.mp4
+*.dmp
+.env
+.env.*
+settings.json
+src/RinkoCamera/Assets/tsuki-original.png

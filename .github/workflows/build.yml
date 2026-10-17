@@ -1,0 +1,33 @@
+name: Windows build
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.426
+      - name: Restore
+        run: dotnet restore RinkoCamera.sln
+      - name: Build
+        run: dotnet build RinkoCamera.sln -c Release --no-restore
+      - name: Tests without desktop codec dependencies
+        run: dotnet test RinkoCamera.sln -c Release --no-build --filter 'Category!=WindowsMediaIntegration' --logger trx --results-directory artifacts/test-results
+      - name: Self-contained portable build
+        run: ./scripts/publish.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RinkoCamera-win-x64
+          path: artifacts/publish/RinkoCamera/win-x64/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: artifacts/test-results/

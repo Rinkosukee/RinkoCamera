@@ -1,0 +1,50 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8C3215F4-A02F-4019-B4BD-316E642DC204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RinkoCamera", "src\RinkoCamera\RinkoCamera.csproj", "{FE10DC68-D8ED-498E-96D6-E119D2DC091A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RinkoCamera.Core", "src\RinkoCamera.Core\RinkoCamera.Core.csproj", "{EEADF504-E51E-4075-9F0F-299DA2B5232C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RinkoCamera.Infrastructure", "src\RinkoCamera.Infrastructure\RinkoCamera.Infrastructure.csproj", "{155AE84D-146E-4C84-9C3A-C7AE380B696C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D847986F-3A60-427C-A94C-971D26CE36BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RinkoCamera.Tests", "tests\RinkoCamera.Tests\RinkoCamera.Tests.csproj", "{7D27975A-2112-4AF8-A279-C143A98A90EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE10DC68-D8ED-498E-96D6-E119D2DC091A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE10DC68-D8ED-498E-96D6-E119D2DC091A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE10DC68-D8ED-498E-96D6-E119D2DC091A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE10DC68-D8ED-498E-96D6-E119D2DC091A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEADF504-E51E-4075-9F0F-299DA2B5232C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEADF504-E51E-4075-9F0F-299DA2B5232C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEADF504-E51E-4075-9F0F-299DA2B5232C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEADF504-E51E-4075-9F0F-299DA2B5232C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155AE84D-146E-4C84-9C3A-C7AE380B696C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155AE84D-146E-4C84-9C3A-C7AE380B696C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155AE84D-146E-4C84-9C3A-C7AE380B696C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155AE84D-146E-4C84-9C3A-C7AE380B696C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D27975A-2112-4AF8-A279-C143A98A90EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D27975A-2112-4AF8-A279-C143A98A90EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D27975A-2112-4AF8-A279-C143A98A90EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D27975A-2112-4AF8-A279-C143A98A90EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE10DC68-D8ED-498E-96D6-E119D2DC091A} = {8C3215F4-A02F-4019-B4BD-316E642DC204}
+		{EEADF504-E51E-4075-9F0F-299DA2B5232C} = {8C3215F4-A02F-4019-B4BD-316E642DC204}
+		{155AE84D-146E-4C84-9C3A-C7AE380B696C} = {8C3215F4-A02F-4019-B4BD-316E642DC204}
+		{7D27975A-2112-4AF8-A279-C143A98A90EC} = {D847986F-3A60-427C-A94C-971D26CE36BC}
+	EndGlobalSection
+EndGlobal

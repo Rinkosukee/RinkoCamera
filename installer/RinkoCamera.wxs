@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WiX v4 package shell. The build script generates the AppFiles component group
+     from the self-contained publish directory so every runtime dependency is
+     installed and removed with the MSI. -->
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+      Name="RinkoCamera"
+      Manufacturer="RinkoCamera Contributors"
+      Version="$(var.ProductVersion)"
+      UpgradeCode="8D2F1D27-70C8-4F0E-9CC2-4E45DA6F50F2"
+      Scope="perUser">
+    <SummaryInformation Description="Local Windows screen recorder" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of RinkoCamera is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <Icon Id="Tsuki.exe" SourceFile="$(var.BrandDir)\tsuki.ico" />
+    <Property Id="ARPPRODUCTICON" Value="Tsuki.exe" />
+
+    <Feature Id="MainFeature" Title="RinkoCamera" Level="1">
+      <ComponentGroupRef Id="AppFiles" />
+      <ComponentGroupRef Id="AppShortcuts" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="INSTALLFOLDER" Name="RinkoCamera" />
+    </StandardDirectory>
+    <StandardDirectory Id="DesktopFolder" />
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="AppShortcuts" Directory="INSTALLFOLDER">
+      <!-- The executable is also the component key path. Keeping the shortcut
+           in its own component makes Add/Remove Programs and upgrades reliable. -->
+      <Component Id="ApplicationShortcut" Guid="0E464D38-8811-4C86-8ECF-29185C6D3CF0">
+        <File Id="ApplicationShortcutFile" Source="$(var.PublishDir)\RinkoCamera.exe" KeyPath="no">
+          <Shortcut
+              Id="DesktopShortcut"
+              Directory="DesktopFolder"
+              Name="RinkoCamera"
+              Description="Record a window or display locally"
+              WorkingDirectory="INSTALLFOLDER"
+              Icon="Tsuki.exe" IconIndex="0"
+              Advertise="no" />
+        </File>
+        <RemoveFolder Id="RemoveInstallFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\RinkoCamera\Installer" Name="Shortcut" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
